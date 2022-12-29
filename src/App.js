@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
+import TextForms from './components/TextForms';
 
 // function App1() {
 //   return (
@@ -35,7 +36,10 @@ import Navbar from './components/Navbar';
 function App() {
     return (
     <>
-    <Navbar Title="Title" Home="Home" About="about me"/>
+      <Navbar Title="Title" Home="Home" About="about me"/>
+      <div className="container my-3">
+        <TextForms Title="Enter text here"/>
+      </div>
     </>
   );
 }
