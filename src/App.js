@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
+import About from './components/About';
 import Navbar from './components/Navbar';
-import TextForms from './components/TextForms';
+// import TextForms from './components/TextForms';
 
 // function App1() {
 //   return (
@@ -31,14 +32,13 @@ import TextForms from './components/TextForms';
 
 */
 
-// let name432 = "Rishikesh";
-
 function App() {
     return (
     <>
       <Navbar Title="Title" Home="Home" About="about me"/>
       <div className="container my-3">
-        <TextForms Title="Enter text here"/>
+        {/* <TextForms Title="Enter text here"/> */}
+      <About/>
       </div>
     </>
   );
