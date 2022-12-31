@@ -7,15 +7,30 @@ import TextForms from './components/TextForms';
 function App() {
 
   const [mode, setMode] = useState({
-    color: "black",
-    backgroundColor: 'white',
-    border: '1px solid white'
-});
+    color: 'white',
+    backgroundColor: 'black'
+  });
+
+  const togglemode = ()=>{
+    console.log(12);
+    if(mode.color === 'black'){
+      setMode({
+        color: 'white',
+        backgroundColor: 'black'
+      });
+    }
+    else{
+      setMode({
+        color: 'black',
+        backgroundColor: 'white'
+      });
+    }
+  }
 
     return (
     <>
-      <Navbar Title="Title" Home="Home" About="about me"/>
-      <div className="container my-3" mode={mode}>
+      <Navbar Title="Title" Home="Home" About="about me" mode={mode} togglemode={togglemode}/>
+      <div className="container my-3">
       <TextForms Title="Enter text here"/>
       {/* <About/> */}
       </div>
