@@ -1,44 +1,23 @@
-// import logo from './logo.svg';
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
-// import TextForms from './components/TextForms';
-
-// function App1() {
-//   return (
-//     <>
-//     <p> When such case arise, to have multiple tag segement to return, just wrap in same tag</p>
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//     </>
-//   );
-// }
-
-/*
-
-*/
+import { useState } from 'react';
+import TextForms from './components/TextForms';
 
 function App() {
+
+  const [mode, setMode] = useState({
+    color: "black",
+    backgroundColor: 'white',
+    border: '1px solid white'
+});
+
     return (
     <>
       <Navbar Title="Title" Home="Home" About="about me"/>
-      <div className="container my-3">
-        {/* <TextForms Title="Enter text here"/> */}
-      <About/>
+      <div className="container my-3" mode={mode}>
+      <TextForms Title="Enter text here"/>
+      {/* <About/> */}
       </div>
     </>
   );
