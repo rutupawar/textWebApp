@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../Navbar.css';
 
 
 export default function Navbar(props) {
   return (
-    <div>
+    <>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode.color} bg-${props.mode.color}`}>
-      <div className="container-fluid">
-        <a className="navbar-brand" href="/">{props.Title}</a>
+      <div className={`container-fluid ${props.mode.color}`}>
+        <a className={`navbar-brand ${props.mode.color}`} href="/">{props.Title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -34,18 +35,24 @@ export default function Navbar(props) {
               <a className="nav-link disabled" href="/">Disabled</a>
             </li>
           </ul>
-          <div className="form-check form-switch">
+          <div className={`form-check form-switch`}>
             <input className="form-check-input" onClick={props.togglemode} type="checkbox" id="flexSwitchCheckDefault"/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Toggle dark</label>
           </div>
           <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <input className="form-control mx-3" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
-    </div>
+      </div>
     </nav>
-    </div>
+      <div className="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Success</strong> You should check in on some of those fields below.
+          <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+    </>
   )
 }
 

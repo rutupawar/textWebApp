@@ -5,25 +5,23 @@ import { useState } from 'react';
 import TextForms from './components/TextForms';
 
 function App() {
-
+  
   const [mode, setMode] = useState({
-    color: 'white',
-    backgroundColor: 'black'
+    color: 'white'
   });
 
   const togglemode = ()=>{
-    console.log(12);
-    if(mode.color === 'black'){
+    if(mode.color === 'white'){
       setMode({
-        color: 'white',
-        backgroundColor: 'black'
+        color: 'black'
       });
+      document.body.style.backgroundColor = 'grey'
     }
     else{
       setMode({
-        color: 'black',
-        backgroundColor: 'white'
+        color: 'white'
       });
+      document.body.style.backgroundColor = 'white'
     }
   }
 
